@@ -13,43 +13,43 @@ function writePassword() {
 function generatePassword() {
 
   // Create empty string to add password parameters to
-  parameters = ""
+  var parameters = "";
 
   // Create empty string to add password characters to
-  myPassword = ""
+  var myPassword = "";
 
   // Ask user password specifics
-  var length = prompt("How long would you like your password (8-128)")
+  var length = prompt("How long would you like your password (8-128)");
   
   // Check to see if password length is valid
   if ((length < 8) || (length > 128)) {
-    alert("Your password needs to be 8-128 characters long")
-    generatePassword()
+    alert("Your password needs to be 8-128 characters long");
+    generatePassword();
   }
 
   // Decide whether or not to add character types
-  var lower = confirm("Would you like lower case characters in it?")
+  var lower = confirm("Would you like lower case characters in it?");
   
   if(lower) {
-    parameters += "abcdefghijklmnopqrstuvwxyz"
+    parameters += "abcdefghijklmnopqrstuvwxyz";
   }
 
-  var upper = confirm("Would you like upper case characters in it?")
+  var upper = confirm("Would you like upper case characters in it?");
 
   if(upper) {
-    parameters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    parameters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
-  var numeric = confirm("Would you like numeric characters in it?")
+  var numeric = confirm("Would you like numeric characters in it?");
 
   if(numeric) {
-    parameters += "0123456789"
+    parameters += "0123456789";
   }
 
-  var special = confirm("Would you like special characters in it?")
+  var special = confirm("Would you like special characters in it?");
 
   if(special) {
-    parameters += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    parameters += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
   }
 
   // Loop for the number of characters the user provided
@@ -60,7 +60,7 @@ function generatePassword() {
   }
   
   // Return password value
-  return myPassword
+  return myPassword;
 
 }
 
