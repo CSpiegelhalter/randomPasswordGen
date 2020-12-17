@@ -15,8 +15,8 @@ function generatePassword() {
   // Ask user password length
   var length = parseInt(prompt("How long would you like your password (8-128)"));
   
-  // Check to see if password length is valid
-  if ((length < 8) || (length > 128) || (typeof length !== "number")) {
+  // Check to see if password length and input type is valid
+  if ((length < 8) || (length > 128) || (Number.isInteger(length) == false)) {
     alert("Your password needs to be 8-128 characters long");
     generatePassword();
   }
