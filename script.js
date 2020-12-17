@@ -12,13 +12,7 @@ function writePassword() {
 
 function generatePassword() {
 
-  // Create empty string to add password parameters to
-  var parameters = "";
-
-  // Create empty string to add password characters to
-  var myPassword = "";
-
-  // Ask user password specifics
+  // Ask user password length
   var length = prompt("How long would you like your password (8-128)");
   
   // Check to see if password length is valid
@@ -26,6 +20,30 @@ function generatePassword() {
     alert("Your password needs to be 8-128 characters long");
     generatePassword();
   }
+  else {
+    // Call function to get password contents
+    var options = passwordOptions()
+  }
+
+  // Create empty string to add password characters to
+  var myPassword = "";
+
+  // Loop for the number of characters the user provided
+  for (var i = 0; i < length; i++) {
+
+    // Randomly select a character in the parameters string then add it to myPassword string
+    myPassword += options.charAt(Math.floor(Math.random() * options.length));
+  }
+  
+  // Return password value
+  return myPassword;
+
+}
+
+function passwordOptions() {
+
+  // Create empty string to add password parameters to
+  var parameters = "";
 
   // Decide whether or not to add character types
   var lower = confirm("Would you like lower case characters in it?");
@@ -48,19 +66,13 @@ function generatePassword() {
 
   var special = confirm("Would you like special characters in it?");
 
+  // Must add '\' escape character to two characters that would break it otherwise
   if(special) {
     parameters += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
   }
 
-  // Loop for the number of characters the user provided
-  for (var i = 0; i < length; i++) {
+  return parameters
 
-    // Randomly select a character in the parameters string then add it to myPassword string
-    myPassword += parameters.charAt(Math.floor(Math.random() * parameters.length));
-  }
-  
-  // Return password value
-  return myPassword;
 
 }
 
