@@ -13,10 +13,10 @@ function writePassword() {
 function generatePassword() {
 
   // Ask user password length
-  var length = prompt("How long would you like your password (8-128)");
+  var length = parseInt(prompt("How long would you like your password (8-128)"));
   
   // Check to see if password length is valid
-  if ((length < 8) || (length > 128)) {
+  if ((length < 8) || (length > 128) || (typeof length !== "number")) {
     alert("Your password needs to be 8-128 characters long");
     generatePassword();
   }
@@ -31,7 +31,7 @@ function generatePassword() {
   // Loop for the number of characters the user provided
   for (var i = 0; i < length; i++) {
 
-    // Randomly select a character in the parameters string then add it to myPassword string
+    // Randomly select a character in the parameters string with the 'charAt" method then add it to myPassword string
     myPassword += options.charAt(Math.floor(Math.random() * options.length));
   }
   
