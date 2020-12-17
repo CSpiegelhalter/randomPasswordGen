@@ -16,8 +16,8 @@ function generatePassword() {
   var options = passwordOptions();
 
   // Separates the returned array
-  var length = options[0]
-  var parameters = options[1]
+  var length = options[0];
+  var parameters = options[1];
 
   // Create empty string to add password characters to
   var myPassword = "";
@@ -43,7 +43,7 @@ function passwordOptions() {
   let length = parseInt(prompt("How long would you like your password (8-128)"));
 
   // Check to see if password length and input type is valid
-  if ((length < 8) || (length > 128) || (Number.isInteger(length) == false)) {
+  if ((length < 8) || (length > 128) || (Number.isInteger(length) === false)) {
     alert("Your password needs to be 8-128 characters long");
     return passwordOptions();
   }
@@ -80,7 +80,7 @@ function passwordOptions() {
     }
 
     // Ensures at least one parameter was selected
-    if (parameters == "") {
+    if (parameters === "") {
       alert("You must select at least one password parameter. Try again.");
       return passwordOptions();
     }
