@@ -7,12 +7,12 @@ Generates a random password after prompting you to choose different parameters
     ![Start button](./Assets/startButton.png)
 
 
-2. Next you will be asked for your preferred password length. Make sure you input a number between 8-128 otherwise it will throw a fit!
+2. Next you will be asked for your preferred password length. Make sure you input a NUMBER between 8-128 otherwise it will throw a fit!
 
     ![Length prompt](./Assets/lengthPrompt.png)
 
 
-3. Now you will choose what characters to and to not include in your password (ex. lower/upper case, numbers, special characters). You must choose at least one of these options!
+3. Now you will choose what characters to include and which to not include in your password (ex. lower/upper case, numbers, special characters). You must choose at least one of these options!
 
     ![Lower case](./Assets/lowerCase.png)   ![Upper case](./Assets/upperCase.png)
 
